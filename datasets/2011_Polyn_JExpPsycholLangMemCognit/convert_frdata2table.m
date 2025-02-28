@@ -6,10 +6,10 @@ data.rec.category = data.rec_catnos;
 data.pres.period = zeros(size(data.pres_cat));
 data.rec.period = data.rec_period;
 
-data.pres.task = repmat(data.rec_task, 1, size(data.pres_items, 2))
-data.rec.task = repmat(data.rec_task, 1, size(data.rec_items, 2))
+data.pres.task = repmat(data.rec_task, 1, size(data.pres_items, 2));
+data.rec.task = repmat(data.rec_task, 1, size(data.rec_items, 2));
 
 tab = frdata2table(data, {'category', 'task', 'period'});
-tab.category(isnan(tab.category)) = 0
+tab.category(isnan(tab.category)) = 0;
 
-writetable(tab, '2011_Polyn.csv')
+writetable(tab, '2011_Polyn.csv');
