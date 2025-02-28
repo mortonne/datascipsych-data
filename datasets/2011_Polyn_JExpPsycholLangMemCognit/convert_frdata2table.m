@@ -12,5 +12,6 @@ data.rec.task = repmat(data.rec_task, 1, size(data.rec_items, 2));
 tab = frdata2table(data, {'category', 'task', 'period'});
 undef = cellfun(@(x) ~ischar(x) && isnan(x), tab.category);
 tab.category(undef) = {'n/a'};
+tab.period(tab.period == 0) = NaN;
 
 writetable(tab, '2011_Polyn.csv');
