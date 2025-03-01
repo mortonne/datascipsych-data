@@ -8,7 +8,7 @@ for i = 1:size(data.taskcatno, 1)
     for j = 1:size(data.taskcatno, 2)
         if ~isnan(data.taskcatno(i, j))
             cat = data.taskcatno(i, j);
-            data.pres.period(i, data.pres.category(i, :) == cat) = j;
+            data.pres.period(i, data.pres_catnos(i, :) == cat) = j;
         end
     end
 end
@@ -20,6 +20,5 @@ data.rec.task = repmat(data.rec_task, 1, size(data.rec_items, 2));
 tab = frdata2table(data, {'category', 'task', 'period'});
 undef = cellfun(@(x) ~ischar(x) && isnan(x), tab.category);
 tab.category(undef) = {'n/a'};
-tab.period(tab.period == 0) = NaN;
 
 writetable(tab, '2011_Polyn.csv');
