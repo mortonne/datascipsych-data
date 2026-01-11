@@ -10,6 +10,8 @@ dependencies = [
     "jupyterlab",
     "psifr",
     "pyarrow",
+    "pybids>=0.21.0",
+    "pingouin>=0.5.5",
 ]
 
 [build-system]
