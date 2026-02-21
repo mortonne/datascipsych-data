@@ -175,3 +175,7 @@ cython_debug/
 
 # PyEnv
 .python-version
+
+visualizations/*.svg
+.vscode
+.DS_Store
